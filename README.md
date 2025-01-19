@@ -1,6 +1,7 @@
 # My React Projects
 
-This repository contains a collection of simple projects built with React to showcase my frontend development skills.
+This repository contains a collection of simple projects built with React to showcase my frontend development skills. 
+The code is continuously improving.
 
 ## Projects
 
@@ -17,11 +18,11 @@ This repository contains a collection of simple projects built with React to sho
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/my-react-projects.git
+   git clone https://github.com/josanua/my-react-projects.git
 
 2. Navigate to the desired project directory:
     ```bash
-    cd project-one
+    cd project-name
 
 3. Install dependencies and start the project:
    ```bash
