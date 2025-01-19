@@ -4,7 +4,7 @@ This repository contains a collection of simple projects built with React to sho
 
 ## Projects
 
-1. **[Project - To-Do List](./project-one/README.md)**
+1. **[Project - My To-Do List](./project-one/README.md)**
     - A simple To-Do List with features to add, mark as completed, and delete tasks.
 
 2. **[Project - To-Do List](./project-one/README.md)**
