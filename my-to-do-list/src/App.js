@@ -1,23 +1,29 @@
 import { useState } from 'react';
 import AddTaskForm from "./components/AddTaskForm";
 import TasksList from "./components/TasksList";
-import { listData } from "./Data";
+import { data } from "./Data";
 // import './App.css';
 
 function App() {
-    const [data, setListData] = useState(listData);
-    const [index, setIndex] = useState(0);
+    const [listData, setListData] = useState(data);
+
+    // Utility function to generate a new task object
+    const generateNewTask = (taskName) => ({
+        id: listData.length + 1, // Use current `data` length for ID generation
+        taskName,
+        status: 'in-progress',
+    });
+
+    // Handle adding a new task
+    const handleAddNewTask = (taskFormData) => {
+        const taskName = taskFormData.get("taskName"); // Explicitly named for clarity
+        const newTask = generateNewTask(taskName); // Generate task object
+        setListData((prevData) => [...prevData, newTask]); // Update the state immutably
+
+        console.log([...listData, newTask]); // Log the updated list
+    };
 
 
-    function handleAddTask(formData) {
-        const queryText = formData.get("taskName");
-        console.log(queryText);
-
-        let generateId = listData.length +  1 ;
-        setListData(listData.push({id: generateId, taskName: queryText, status: 'in-progress'}));
-
-        console.log(listData);
-    }
 
   return (
       <div className="App">
@@ -25,7 +31,7 @@ function App() {
               <div className="px-4 py-2">
                   <h1 className="text-gray-800 font-bold text-2xl uppercase">To-Do List</h1>
               </div>
-              <AddTaskForm onSend={handleAddTask}/>
+              <AddTaskForm onSend={handleAddNewTask}/>
               <TasksList listData={listData}/>
               <button
                   className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"

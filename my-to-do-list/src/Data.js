@@ -1,4 +1,4 @@
-export let listData = [
+export let data = [
  {
   id: 0,
   taskName: 'Finish project proposal',
