@@ -23,25 +23,13 @@ function App() {
         setListData((prevData) => [...prevData, newTask]); // Update the state immutably
     };
 
-    // Placeholder handlers for other actions
-    // const handleMarkAsDone = () => {
-    //     // Logic for marking task as done
-    //     console.log("Mark as Done clicked!");
-    // };
-    //
-    // const handleDeleteTask = (e) => {
-    //     e.preventDefault();
-    //     // Logic for deleting a task
-    //     console.log("Delete Task clicked!");
-    // };
-    //
-    // const handleTasksListData = (e, formData) => {
-    //     e.preventDefault();
-    //     console.log(formData);
-    // }
 
     function handleSubmit(e) {
         e.preventDefault();
+
+        // Determine which button was clicked
+        const clickedButton = e.nativeEvent.submitter;
+        const buttonName = clickedButton.name;
 
         // Get all checked inputs within the form
         const form = e.target; // The form element
@@ -50,16 +38,27 @@ function App() {
         // Filter checked inputs
         const checked = inputs
             .filter((input) => (input.type === "checkbox") && input.checked)
-            .map((input) => input.id); // Map their values
+            .map((input) => +input.id); // Map their values
 
-        // data iteration
-        const updatedListData = listData.map((dataItem) => ({
-            ...dataItem,
-            isCompleted: checked.some((item) => +item === dataItem.id),
-        }));
+        if (buttonName === 'markAsDone') {
+            // data iteration
+            const updatedListData = listData.map((dataItem) => ({
+                ...dataItem,
+                isCompleted: checked.some((item) => item === dataItem.id),
+            }));
 
-        // update hook
-        setListData(updatedListData);
+            // update state hook
+            setListData(updatedListData);
+        }
+
+        if (buttonName === 'deleteTask') {
+            // Filter out tasks that were checked (those selected for deletion)
+            const updatedListData = listData.filter((dataItem) => !checked.includes(dataItem.id));
+
+            // update the state with the new list
+            setListData(updatedListData);
+
+        }
     }
 
     return (
@@ -75,7 +74,7 @@ function App() {
                     <button
                         className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
                         type="submit"
-                        // name="markAsDone"
+                        name="markAsDone"
                         // onClick={handleMarkAsDone}
                     >
                         Mark as Done
@@ -83,7 +82,7 @@ function App() {
                     <button
                         className="flex-shrink-0 bg-red-500 hover:bg-red-700 border-red-500 hover:border-red-700 text-sm border-4 text-white py-1 px-2 rounded"
                         type="submit"
-                        // name="deleteTask"
+                        name="deleteTask"
                         // onClick={handleDeleteTask}
                     >
                         Delete task
