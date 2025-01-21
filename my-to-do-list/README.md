@@ -9,7 +9,9 @@ This project is a simple To-Do List application built with React. The main idea 
 - Utilizes Local Storage to persist data.
 
 ## Task List
-- Add an edit functionality for tasks.
-- Implement a "mark as done" feature.
-- Create a delete feature for tasks.
+- ~~Add an edit functionality for tasks.~~
+- ~~Implement a "mark as done" feature.~~
+- ~~Create a delete feature for tasks.~~
 - Use Local Storage to store and retrieve tasks.
+- Fix design
+- Add improvements

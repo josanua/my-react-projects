@@ -40,6 +40,7 @@ function App() {
             .filter((input) => (input.type === "checkbox") && input.checked)
             .map((input) => +input.id); // Map their values
 
+        // mark as Done logic
         if (buttonName === 'markAsDone') {
             // data iteration
             const updatedListData = listData.map((dataItem) => ({
@@ -51,13 +52,13 @@ function App() {
             setListData(updatedListData);
         }
 
+        // delete task logic
         if (buttonName === 'deleteTask') {
             // Filter out tasks that were checked (those selected for deletion)
             const updatedListData = listData.filter((dataItem) => !checked.includes(dataItem.id));
 
             // update the state with the new list
             setListData(updatedListData);
-
         }
     }
 
