@@ -1,9 +1,8 @@
 import {useState} from 'react';
 import AddTaskForm from "./components/AddTaskForm";
 import TasksList from "./components/TasksList";
+import { v4 as uuidv4 } from 'uuid';
 import {data} from "./Data";
-
-// import './App.css';
 
 function App() {
     const [listData, setListData] = useState(data);
@@ -11,7 +10,7 @@ function App() {
 
     // Utility function to generate a new task object
     const generateNewTask = (taskName) => ({
-        id: listData.length + 1, // Use current `data` length for ID generation
+        id: listData.length + 1, // Use current `data` length for ID generation, todo: uuidv4();
         taskName,
         status: 'in-progress',
     });
@@ -22,7 +21,6 @@ function App() {
         const newTask = generateNewTask(taskName); // Generate task object
 
         setListData((prevData) => [...prevData, newTask]); // Update the state immutably
-        console.log([...listData, newTask]); // Log the updated list
     };
 
     // Placeholder handlers for other actions
@@ -59,6 +57,8 @@ function App() {
             ...dataItem,
             isCompleted: checked.some((item) => +item === dataItem.id),
         }));
+
+        // update hook
         setListData(updatedListData);
     }
 
