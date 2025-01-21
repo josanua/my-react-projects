@@ -1,5 +1,5 @@
 export default function AddTaskForm(props) {
-    function handleAddTask() {
+    function handleAddTask(e) {
         // props.onSend();
         // e.preventDefault();
         console.log('Btn clicked');
