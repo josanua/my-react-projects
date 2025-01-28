@@ -19,8 +19,8 @@ export default function Examples() {
                 <h3>{EXAMPLES[selectedTopic].title}</h3>
                 <p>{EXAMPLES[selectedTopic].description}</p>
                 <pre>
-          <code>{EXAMPLES[selectedTopic].code}</code>
-        </pre>
+                    <code>{EXAMPLES[selectedTopic].code}</code>
+                </pre>
             </div>
         );
     }
@@ -55,7 +55,7 @@ export default function Examples() {
                     </TabButton>
                 </>
             }>
-                {tabContent}
+            {tabContent}
             </Tabs>
         </Section>
     )
