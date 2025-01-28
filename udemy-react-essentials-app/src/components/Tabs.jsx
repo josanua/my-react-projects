@@ -1,6 +1,4 @@
-export default function Tabs({children, buttons, buttonsContainer}) {
-
-    const ButtonsContainer = buttonsContainer || 'ul';
+export default function Tabs({children, buttons, ButtonsContainer}) {
 
     return (
         <>
