@@ -1,11 +1,10 @@
-import {Link} from "react-router-dom";
+import MainNavigation from "../components/MainNavigation";
 
 export default function Products() {
     return (
         <>
+            <MainNavigation/>
             <h1>Products Page</h1>
-            <p>Go to <Link to="/">Home page</Link></p>
         </>
     )
-
 }
