@@ -1,8 +1,10 @@
+import {Link} from 'react-router-dom';
+
 export default function Home() {
     return (
         <>
             <h1>Home Page</h1>
-            <p>Go to <a href="/products">products list.</a></p>
+            <p>Go to <Link to="/products">products list.</Link></p>
         </>
     )
 }
