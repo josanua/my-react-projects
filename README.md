@@ -12,7 +12,7 @@ The code is continuously improving.
    - A simple and beautiful application that helps in understanding the basic principles of components and state.
 
 3. **[Project - SPA-React-Router-APP](./udemy-react-essentials-app/)**
-   - An SPA application that appears as a multipage app, utilizing the React Router framework.
+   - An SPA application that appears as a multipage app., utilizing the React Router framework.
 
 4. **[Project - SPA-React-Router-APP](./custom-tic-tac-toe-game/)**
    - The famous game that is custom-made with a design different from the one provided on the official React website.
