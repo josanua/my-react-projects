@@ -5,14 +5,17 @@ The code is continuously improving.
 
 ## Projects
 
-1. **[Project - My To-Do List](./project-one/README.md)**
+1. **[Project - My To-Do List](./my-to-do-list/README.md)**
     - A simple To-Do List with features to add, mark as completed, and delete tasks.
 
-2. **[Project - To-Do List](./project-one/README.md)**
-    - A simple To-Do List with features to add, mark as completed, and delete tasks.
+2. **[Project - React-Essentials-Smal-App](./udemy-react-essentials-app/)**
+   - A simple and beautiful application that helps in understanding the basic principles of components and state.
 
-3. **[Project - Calculator](./project-three/README.md)**
-    - A simple calculator supporting basic arithmetic operations.
+3. **[Project - SPA-React-Router-APP](./udemy-react-essentials-app/)**
+   - An SPA application that appears as a multipage app, utilizing the React Router framework.
+
+4. **[Project - SPA-React-Router-APP](./custom-tic-tac-toe-game/)**
+   - The famous game that is custom-made with a design different from the one provided on the official React website.
 
 ## How to Run the Projects
 
